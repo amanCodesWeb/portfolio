@@ -1556,3 +1556,15 @@ body.dark-theme .meta-val {
 .contact-toast__close:hover {
     color: #333;
 }
+
+.contact-toast {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(110%);
+}
+
+.contact-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}

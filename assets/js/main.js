@@ -180,9 +180,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const params = new URLSearchParams(window.location.search);
 
     if (params.get('contact') === 'success') {
-        showContactToast();
+        const toast = document.getElementById('contact-toast');
 
-        // Remove ?contact=success from the URL
+        if (toast) {
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 5000);
+        }
+
         window.history.replaceState(
             {},
             document.title,
