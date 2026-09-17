@@ -760,12 +760,29 @@ img { max-width: 100%; height: auto; }
   z-index: -1;
 }
 
-.contact__form .button:hover::before  { opacity: 1; }
-.contact__form .button:hover          { transform: translateY(-3px); letter-spacing: 1px; }
-.contact__form .button:active         { transform: translateY(-1px); }
+.contact__form .button:hover::before,
+.contact__form .button:focus-visible::before {
+  opacity: 1;
+}
 
-.contact__form .button .button__icon  { transition: transform .3s; }
-.contact__form .button:hover .button__icon { transform: translateX(5px); }
+.contact__form .button:hover,
+.contact__form .button:focus-visible {
+  transform: translateY(-3px);
+  letter-spacing: 1px;
+}
+
+.contact__form .button:active {
+  transform: translateY(-1px);
+}
+
+.contact__form .button .button__icon {
+  transition: transform .3s;
+}
+
+.contact__form .button:hover .button__icon,
+.contact__form .button:focus-visible .button__icon {
+  transform: translateX(5px);
+}
 
 @keyframes gradientShift {
   0%   { background-position: 0% 50%; }
