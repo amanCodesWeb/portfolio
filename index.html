@@ -713,11 +713,24 @@
                     </div>
                 </div>
 
+                <div id="contact-toast" class="contact-toast">
+                    <div class="contact-toast__icon">✓</div>
+
+                    <div class="contact-toast__content">
+                        <strong>Message sent successfully!</strong>
+                        <span>Thanks for reaching out. I'll get back to you soon.</span>
+                    </div>
+
+                    <button type="button" class="contact-toast__close" onclick="hideContactToast()">
+                        &times;
+                    </button>
+                </div>
+
                 <form action="https://formsubmit.co/a296a0dc7bcc8aba3276ba91cbbb0176" method="POST" class="contact__form grid">
 
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="New message from portfolio — Aman Singh">
-                    <input type="hidden" name="_next" value="">
+                    <input type="hidden" name="_next" value="https://amancodesweb.github.io/portfolio?contact=success#contact">
 
                     <div class="contact__inputs grid">
                         <div class="contact__content">

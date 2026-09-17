@@ -172,3 +172,42 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+
+// success messge
+
+document.addEventListener('DOMContentLoaded', function () {
+    const params = new URLSearchParams(window.location.search);
+
+    if (params.get('contact') === 'success') {
+        showContactToast();
+
+        // Remove ?contact=success from the URL
+        window.history.replaceState(
+            {},
+            document.title,
+            window.location.pathname + window.location.hash
+        );
+    }
+});
+
+function showContactToast() {
+    const toast = document.getElementById('contact-toast');
+
+    if (!toast) return;
+
+    toast.classList.add('show');
+
+    // Automatically hide after 5 seconds
+    setTimeout(function () {
+        hideContactToast();
+    }, 5000);
+}
+
+function hideContactToast() {
+    const toast = document.getElementById('contact-toast');
+
+    if (!toast) return;
+
+    toast.classList.remove('show');
+}

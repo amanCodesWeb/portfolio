@@ -1467,3 +1467,92 @@ body.dark-theme .meta-val {
     margin-top: .5rem;
   }
 }
+
+/* success message */
+
+.contact-toast {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    z-index: 9999;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    width: 360px;
+    max-width: calc(100% - 40px);
+    padding: 16px 18px;
+
+    background: #ffffff;
+    border-left: 4px solid #22c55e;
+    border-radius: 10px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(120%);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
+}
+
+.contact-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.contact-toast__icon {
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    background: #22c55e;
+    color: #ffffff;
+
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.contact-toast__content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.contact-toast__content strong {
+    color: #222;
+    font-size: 15px;
+}
+
+.contact-toast__content span {
+    color: #666;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.contact-toast__close {
+    margin-left: auto;
+
+    border: 0;
+    background: transparent;
+
+    color: #999;
+    font-size: 22px;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.contact-toast__close:hover {
+    color: #333;
+}
